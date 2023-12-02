@@ -1,0 +1,176 @@
+<Doctype html>
+    <html>
+        <head>
+            <title>about us</title>
+            <style>
+                .about{
+                    background: #f8f8f8;
+                    overflow:hidden;
+                }
+                .heading h1{
+                    color:blue;
+                    font-size:55px;
+                    text-align:center;
+                    margin-top:35px;
+                }
+                .container{
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                    width:90%;
+                    margin:65px auto;
+                }
+                .about-content{
+                    flex:1;
+                    width: 600px;
+                    margin:0px 25px;
+                    animation: fadeInUp 2s ease;
+                }
+                .about h2{
+                    font-size:38px;
+                    margin-bottom:20px;
+                    color:#333;
+                }
+                about-content p{
+                    font-size:24px;
+                    line-height:1.5;
+                    margin-bottom:40px;
+                    color:#666;
+
+                }
+                .about-content button{
+                    display:inline-block;
+                    background-color: #ff4500;
+                    color:#fff;
+                    padding:12px 24px;
+                    border-radius:5px;
+                    font-size:20px;
+                    border:none;
+                    cursor:pointer;
+                    transition: 0.3s ease;
+
+                }
+                .about-content button:hover{
+                    background-color: #ff6347;
+                    transition:scale(1.1);
+
+                }
+                .about-image{
+                    flex:1;
+                    width:600px;
+                    margin:auto;
+                    animation: fadeInRight 2s ease;
+                }
+                img{
+                    width:75%;
+                    height:auto;
+                    border-radius:10px;
+                }
+                @media screen and(max-width:768px) {
+                    .heading h1{
+                        font-size: 45px;
+                        margin-top: 30px;
+                    }
+                    .about{
+                        margin:0px;
+                    }
+                    .container{
+                        width:100%;
+                        flex-direction: column;
+                        margin: 0px 40px;
+
+                    }
+                    .about-content{
+                        width:100%;
+                        margin:35px 0px;
+                    }
+                    .about-content h2{
+                        font-size: 30px;
+
+                    }
+                    .about-content p{
+                        font-size: 18px;
+                        margin-bottom: 20px;
+
+                    }
+                    .about-content button{
+                        font-size: 16px;
+                        padding:8px 16px;
+
+                    }
+                    #more{display:none;}
+                    .about-image{
+                        width: 100%;
+
+                    }
+                }
+                @keyframes fadeInUp
+                {
+                    0%{
+                        opacity: 0;
+                        transform: translateY(50px);
+                    }
+                    100%{
+                        opacity: 1;
+                        transform: translateY(0px);
+                    }
+                }
+                    @keyframes fadeInRight
+                {
+                    0%{
+                        opacity: 0;
+                        transform: translateX(-50px);
+                    }
+                    100%{
+                        opacity: 1;
+                        transform: translateX(0px);
+                    }
+                }
+            </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        </head>
+        <body>
+            <section class="about"></section>
+            <div class="heading">
+                <h1>About us</h1>
+            </div>
+            <div class="container">
+                <div class="about-content">
+                    <h2>welcome to our website</h2>
+                    <p>Driven by innovation and an unwavering commitment to sustainability, 
+                        Livguard continues to redefine the landscape of energy storage solutions. 
+                        Offering an array of quality products including automotive batteries, inverters, and residential 
+                        solar solutions, we're not just powering homes and businesses, but also supporting the world's shift to
+                        a cleaner future. Pioneering in our approach, we stand dedicated to deliver limitless energy,
+                        as we stride towards shaping a world where energy is accessible, efficient, and sustainable.<br><span id="dots"></span><span id="more">
+                        Our Mission
+                        Establish Livguard as a strong player in energy-solution space in India. We will achieve this by developing 
+                        an ecosystem of delighted customers, committed partners, exceptional product quality and delightful service.
+                        To be a global leader in energy storage products driven by innovative technology and excellence in manufacturing & services</span></p>
+                    <button class="cta-button" onclick="myFunction()" id="myBtn">Read More</button>
+                </div>
+                <div class="about-image">
+                    <img src="livguardbattery.jpeg">
+                </div>
+                </div>
+                <script>
+                    function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less";
+    moreText.style.display = "inline";
+  }
+}
+        </script>
+        </body>
+        </section>
+    </html>
