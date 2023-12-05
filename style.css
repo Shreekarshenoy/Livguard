@@ -64,7 +64,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-     background:url('/bckgrndlogin.jpg')no-repeat;  
+     background:url('/images/bckgrndlogin.jpg')no-repeat;  
     background-size:cover;
     /* background-color:#939899; */
     background-position: center;
@@ -98,7 +98,7 @@
     background: transparent;
     border: none;
     outline: none;
-    border: 2px solid grey;
+    border: 1px solid grey;
     border-radius: 40px;
     font-size: 22px;
     color: #fff;
