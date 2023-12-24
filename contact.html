@@ -1,108 +1,178 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact Us</title>
     <style>
-         body {
-                background-image: linear-gradient(rgb(227, 109, 109),rgb(61, 59, 59));
-                background-repeat: no-repeat;
-                height: 99vh;
-                overflow-y: hidden;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-family: 'Quicksand', sans-serif;
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgb(109, 176, 227), rgb(244, 243, 243));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
-                
-            }
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    width: 90%;
+    background: rgba(248, 248, 248, 0.8);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
-            .formBox {
-                padding: 20px;
-                text-align: center;
-                text-size-adjust: 20px;
-                min-height: 50vh;
-                min-width: 50vw;
-                display: flex;
-                flex-direction: column;
-                background: #f8f8f885;
-                border-radius: 30px;
-                backdrop-filter: blur(10px);
-                font-size: 30px;
+.form-box {
+    flex: 1 1 300px;
+    padding: 20px;
+    text-align: center;
+}
 
-            }
-            .container{
-                padding:20px;
-                text-align:center;
+.form-box h2 {
+    margin-bottom: 10px;
+    font-size: 28px;
+}
 
-            }
+.form-box p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
 
-            h2 {
-                margin-bottom: -10px;
-            }
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-            p {
-                font-weight: 500;
-                font-size: 20px;
-            }
-            .fas{
-                color:black;
-               position: absolute;
-            
-               font-size: 20px;
-               bottom:32%;
-                left:49%;
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
 
+.input-container input,
+.input-container textarea {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
 
-            }
-            
+.input-container input:focus,
+.input-container textarea:focus {
+    border-color: #8a8a8a;
+}
 
-            
+.input-container i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    color: #555;
+}
+
+.submit-btn {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f44336;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #d32f2f;
+}
+
+.contact-info {
+    flex: 1 1 200px;
+    padding: 20px;
+    text-align: center;
+    color: rgb(17, 16, 16);
+    font-size: medium;
+    font-weight: bold;
+}
+
+.contact-info h3 {
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #f44336;
+}
+
     </style>
 </head>
 <body>
     
-    <div class="container"  >
-    <div class="formBox">
-        <h2>Contact Us</h2>
-        <p>You will hear from us at the earliest!</p>
-        <form action="#">
-            <div class="nameInp">
-                <i class="fa fa-user icon"></i>
-                <input type="text" placeholder="Full Name" name="name" id="name">
-
-            </div>
-            <div class="mailInp">
-                <i class="fa fa-envelope"></i>
-                <input type="email" name="mail" id="mail" placeholder="Email">
-            </div>
-            <div class="phoneInp">
-                <i class="fa fa-phone"></i>
-                <input type="number" name="phone" id="phone" placeholder="Phone">
-            </div>
-            <div class="queryInp">
-                <textarea name="query" id="query" cols="30" rows="5"
-                    placeholder="Any comment or your query"></textarea>
-            </div>
-            <div class="submitBtn">
-                <button id="btn" onclick="notif()">Send Message</button>
-            </div>
-        </form>
-        <p class="extra">You can also contact us at  181-2323-8282 </p>
+    <div class="container">
+        <div class="form-box">
+            <h2>Contact Us</h2>
+            <p>You will hear from us at the earliest!</p>
+            <form action="https://formspree.io/f/mpzgvnnj" method="POST">
+                <div class="input-container">
+                    <input type="text" placeholder="Full Name" name="name" id="name" required>
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="input-container">
+                    <input type="email" name="mail" id="email" placeholder="Email" required>
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="input-container">
+                    <input type="tel" name="phone" id="phone" placeholder="Phone" required>
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="input-container">
+                    <textarea name="query" id="query" cols="30" rows="5" placeholder="Any comment or your query" required></textarea>
+                    <i class="fas fa-comment"></i>
+                </div>
+                <div class="submit-btn">
+                    <button onclick="notif()">Send Message</button>
+                </div>
+            </form>
+            <p class="extra">You can also contact us at 181-2323-8282</p>
+        </div>
+        <div class="contact-info">
+            <h3>Address</h3>
+            <p>Shop no 7 <br>kadri commercial complex <br>Mallikatta,Mangalore <br>WhatsApp no:63632 31299 </p>
+            <h3>Email</h3>
+            <p>livguard@gmail.com
+                <br>shreeraksha.energy@gamil.com
+            </p>
+        </div>
     </div>
-    
-        <div class="contactinfo">
-         <h1>Address</h1>
-                <p>345 BC Road Mangalore</p>
-    <h1>Email</h1>
-            <p>livguard@gmail.com</p>
-        
-    </div>
 
-
-    
+    <script>
+        function notif() {
+            alert('Message Sent!');
+        }
+    </script>
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "shreekarshenoy@gmail.com",
+            Password : "shreeraksha29#",
+            To : 'shreekarshenoy@gmail.com',
+            From : document.getElementById("email").value,
+            Subject : "New enquiry",
+            Body : "And this is the body"
+        }).then(
+        message => alert(message)
+        );
+        }
+    </script> -->
 </body>
 </html>
