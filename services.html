@@ -2,21 +2,23 @@
 <html>
 <head>
   <title>Service Request Form</title>
+ 
   <style>
     body {
       font-family: Arial, sans-serif;
-      color: black;
-      background-color: #ebf1f3;
+      color: #333;
+      /* background-image: url(/images/background0.jpg); */
+      background-color: rgb(45, 44, 44);
       margin: 0;
       padding-top: 80px;
     }
     h1 {
-      background-color: white;
-      color: #3f3535;
+      background-color: #ffffff;
+      color: #333;
       padding: 10px;
       margin: 0;
       text-align: center;
-      box-shadow: 0px 0px 10px yellow;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
       position: fixed;
       top: 0;
       left: 0;
@@ -24,24 +26,32 @@
       z-index: 999;
     }
     .main {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
+      width: 500px;
+      background: transparent;
+      backdrop-filter: blur(30px);
+      
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      color: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      border: 2px solid rgba(225,255,255,.2);
     }
     label {
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+      font-weight: bold;
     }
     input[type="text"],
     textarea,
     select {
-      width: calc(100% - 12px);
-      padding: 8px;
+      width: calc(100% - 22px);
+      padding: 10px;
       font-size: 16px;
       border: 1px solid #ccc;
       border-radius: 4px;
       transition: border-color 0.3s ease-in-out;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
     }
     input[type="text"]:focus,
     textarea:focus,
@@ -50,10 +60,10 @@
     }
     .checkbox-group label {
       display: inline-block;
-      margin-right: 10px;
+      margin-right: 15px;
     }
     button {
-      padding: 10px 20px;
+      padding: 12px 24px;
       font-size: 16px;
       background-color: #08f30f;
       color: white;
@@ -61,22 +71,22 @@
       border-radius: 4px;
       cursor: pointer;
       transition: background-color 0.3s ease-in-out;
-      font-weight: bolder;
+      font-weight: bold;
       display: block;
-      margin: 0 auto;
+      margin: 15px auto 0;
     }
     button:hover {
       background-color: #45a049;
     }
     form {
-      background-color: rgba(74, 74, 65, 0.2);
       padding: 30px;
-      border-radius: 20px;
+      border-radius: 10px;
     }
     .customer-care {
-      background-color: rgba(32, 28, 28, 0.831);
+      background-color: #333;
+      color: #fff;
       padding: 20px;
-      border-radius: 20px;
+      border-radius: 10px;
       text-align: center;
       margin-top: 20px;
     }
@@ -96,57 +106,99 @@
       margin-right: 10px;
       border-radius: 50%;
     }
+    .navbar ul{
+    overflow: auto;
+}
+.navbar li{
+    float:left;
+    list-style: none; 
+    margin: 13px 20px;
+    
+}
+.navbar li a{
+    padding: 3px 3px;
+    text-decoration: none;
+    color: white;
+}
+.navbar li a:hover{
+    color: rgb(230, 30, 30)
+}
+
+.navbar input{
+    border: 2px solid black;
+    border-radius: 14px;
+    padding: 3px 17px;
+    width: 129px;
+}
+   
   </style>
 </head>
 <body>
+  
   <h1>Service Request Form</h1>
-  <div class="main">
-    <form id="service-form">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-      
-      <label for="email">Email:</label>
-      <input type="text" id="email" name="email" required>
-      
-      <label for="phone">Phone:</label>
-      <input type="text" id="phone" name="phone" required>
-      
-      <label for="service-type">Service Type:</label>
-      <select id="service-type" name="service-type" required>
-        <option value="">Select Service Type</option>
-        <option value="Inverter Repair">Inverter Repair</option>
-        <option value="Inverter Installation">Inverter Installation</option>
-        <option value="Inverter Maintenance">Inverter Maintenance</option>
-      </select>
-      
-      <label for="issue">Issue:</label>
-      <textarea id="issue" name="issue" rows="4" required></textarea>
-      
-      <label>Indicators in Inverter:</label>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="indicators[]" value="No Power"> No Power</label>
-        <label><input type="checkbox" name="indicators[]" value="Low Battery"> Low Battery</label>
-        <label><input type="checkbox" name="indicators[]" value="Overload"> Overload</label>
-        <label><input type="checkbox" name="indicators[]" value="Faulty Display"> Faulty Display</label>
+  <center>
+    <nav class="navbar">
+      <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="/aboutus.html">About</a></li>
+          <li><a href="/product.html">Products</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/contact.html">Contact us</a></li>
+          <li><a href="/signup.html">Signup</a></li>
+          <li><a href="/feedback.html">Feedback</a></li>
+          
+      </ul>
+          
+  </nav>   
+    <div class="main">
+        <form  action="https://formspree.io/f/mpzgvnnj" method="POST">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" required>
+          
+          <label for="phone">Phone:</label>
+          <input type="text" id="phone" name="phone" required>
+          
+          <label for="service-type">Service Type:</label>
+          <select id="service-type" name="service-type" required>
+            <option value="">Select Service Type</option>
+            <option value="Inverter Repair">Inverter Repair</option>
+            <option value="Inverter Installation">Inverter Installation</option>
+            <option value="Inverter Maintenance">Inverter Maintenance</option>
+          </select>
+          
+          <label for="issue">Issue:</label>
+          <textarea id="issue" name="issue" rows="4" required></textarea>
+          
+          <label>Indicators in Inverter:</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" name="indicators[]" value="No Power"> No Power</label>
+            <label><input type="checkbox" name="indicators[]" value="Low Battery"> Low Battery</label>
+            <label><input type="checkbox" name="indicators[]" value="Overload"> Overload</label>
+            <label><input type="checkbox" name="indicators[]" value="Faulty Display"> Faulty Display</label>
+          </div>
+          
+          <button type="submit">Submit</button>
+        </form>
+        
+        <!-- <div class="customer-care">
+          <h2>Customer Care</h2>
+          <p>We're here to help! If you have any questions or need assistance, please don't hesitate to reach out to our customer care team.</p>
+          <div class="contact-info">
+            <p>Phone: 123-456-7890</p>
+          </div>
+          <div class="contact-info">
+            <p>Email: info@example.com</p>
+          </div>
+        </div> -->
       </div>
-      
-      <button type="submit">Submit</button>
-    </form>
-    
-    <div class="customer-care">
-      <h2>Customer Care</h2>
-      <p>We're here to help! If you have any questions or need assistance, please don't hesitate to reach out to our customer care team.</p>
-      <div class="contact-info">
-        <p>Phone: 123-456-7890</p>
-      </div>
-      <div class="contact-info">
-        <p>Email: info@example.com</p>
-      </div>
-    </div>
-  </div>
+  </center>
+ 
   
   <script>
-    document.getElementById("service-form").addEventListener("submit", function(event) {
+   document.getElementById("service-form").addEventListener("submit", function(event) {
       event.preventDefault();
       var formData = new FormData(this);
       var data = {};
@@ -160,9 +212,20 @@
           data[pair[0]] = pair[1];
         }
       }
-      console.log(data);
-      // Perform actions with the 'data' object (e.g., send data to server via AJAX)
+      
+      // Display captured data to the user
+      var message = "Form data:\n";
+      for (var key in data) {
+        if (Array.isArray(data[key])) {
+          message += key + ": " + data[key].join(', ') + "\n";
+        } else {
+          message += key + ": " + data[key] + "\n";
+        }
+      }
+      alert(message);
+      this.reset();
     });
+  </script>
   </script>
 </body>
 </html>
